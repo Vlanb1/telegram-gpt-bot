@@ -47,16 +47,12 @@ async def chat_with_gpt(user_id, message):
 
 # Обработка команды /start
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "👋 Привет! Я GPT-бот.
-
-"
-        "Просто напиши мне сообщение — и я постараюсь ответить максимально умно 🤖
-
-"
-        "Команда `/reset` — сброс диалога.",
-        parse_mode=ParseMode.MARKDOWN
-    )
+await update.message.reply_text(
+    "👋 Привет! Я GPT-бот.\n\n"
+    "Просто напиши мне сообщение — и я постараюсь ответить максимально умно 🤖\n\n"
+    "Команда `/reset` — сброс диалога.",
+    parse_mode=ParseMode.MARKDOWN
+)
 
 # Обработка команды /reset
 async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
